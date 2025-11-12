@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #171717;
+  --title: #777777;
+  --text: #999999;
+  --text-muted: #696969;
+}
+html {
+  font-family: "Inter Variable", system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--primary);
+  display: grid;
+  grid-template-rows: auto 1fr auto;  
+  background-color: var(--primary);
+}

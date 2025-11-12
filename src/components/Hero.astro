@@ -1,0 +1,33 @@
+---
+import ArrowIcon from "./icons/Arrow_icon.astro"
+---
+
+<div class="max-w-7xl w-full flex flex-wrap gap-x-10 items-center">
+  <h1 class="text-[#777777] text-[289px] tracking-tighter font-bold uppercase">
+    i make
+  </h1>
+  <img src="../../public/line-1.svg" alt="svg" class="size-70" />
+  <!--section-->
+  <section class="max-w-7xl w-full grid grid-cols-[1fr_auto] items-center justify-between mx-auto">
+    <h2 class="uppercase text-[#777777] text-9xl font-bold leading-none tracking-tight">
+      websites
+    </h2>
+
+    <div class="flex flex-col items-start gap-4 px-4 max-w-xs">
+      <div class="font-normal text-base leading-relaxed">
+        <span class="font-light text-[#696969]">ABOUT</span>
+        <span class="font-light text-[#999999]">
+          I am a developer based in Manchester, UK focused on creating
+          interactive digital experiences on the web, working with brands and
+          industry leaders such as Google Fonts, Paystack, Heva Health, Disney,
+          Jelly, and Null amongst others to achieve this.
+        </span>
+      </div>
+
+      <div class="flex items-center justify-start gap-38 max-w-xs">
+        <p class="font-light text-[#696969] text-lg leading-4">Scroll down</p>
+        <ArrowIcon class:list={"size-8"}/>
+      </div>
+    </div>
+  </section>
+</div>

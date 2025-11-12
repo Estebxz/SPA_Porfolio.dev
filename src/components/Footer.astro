@@ -1,0 +1,44 @@
+---
+interface navigationLinksProps {
+  label: string;
+  href?: string | undefined;
+  hasIcon?: boolean;
+}
+
+const navigationLinks: navigationLinksProps[] = [
+  { label: "LINKEDIN", href: "https://www.linkedin.com/in/martinez-esteban/" },
+  { label: "GITHUB", href: "https://github.com/Estebxz/" },
+];
+---
+
+<!--footer -->
+<footer
+  class="max-w-7xl w-full mx-auto flex flex-col md:flex-row items-center md:justify-between gap-4 py-4 px-4"
+>
+  <div class="flex items-center gap-2 flex-none text-left">
+    <div class="text-[#696969] text-sm leading-normal">BOGOTÁ, COL</div>
+
+    <div class="font-medium text-[#aaaaaa] text-xs leading-normal">11:11</div>
+  </div>
+  <section class="flex items-center justify-center gap-4 flex-1">
+    {
+      navigationLinks.map((link) => (
+        <button class="h-auto bg-[#262626] rounded-sm border border-[#999999] px-4 py-2.5 text-[#D9D9D9] flex-none">
+          <a 
+          href={link.href}
+          target="_blank"
+          rel="noreferrer noopener"
+          >{link.label}</a>
+        </button>
+      ))
+    }
+  </section>
+  <div class="text-xs leading-normal text-right flex-none">
+    <span class="font-light text-[#aaaaaa]">
+      Diseñado Por
+    </span>
+    <span class="font-normal text-black">&nbsp;</span>
+    <span class="text-[#696969] text-sm"> • </span>
+    <span class="text-[#696969] text-sm leading-normal"> Joan Mendez </span>
+  </div>
+</footer>
