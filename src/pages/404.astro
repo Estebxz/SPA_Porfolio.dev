@@ -1,0 +1,66 @@
+---
+import Layout from "@/layouts/layout.astro";
+
+interface numberBoxesProps {
+  number?: number;
+  position: string;
+  image?: string | null;
+}
+
+interface navegationLinksProps {
+  label: string;
+  href?: string | null;
+  styles: string;
+}
+
+const numberBoxes: numberBoxesProps[] = [
+  { number: 4, position: "col-start-1", image: null },
+  { position: "col-start-2", image: "./Donut.svg" },
+  { number: 4, position: "col-start-3", image: null },
+];
+
+const navegationLinks: navegationLinksProps[] = [
+  { label: "Volver al incio", href: "/#inicio", styles: "h-auto bg-[#262626] rounded-sm border border-[#999999] px-4 py-2.5 text-[#D9D9D9] flex-none"},
+  { label: "Hora de hacer alguna otra cosa", href: null, styles: "h-auto flex-none px-4 py-2.5 text-[#D9D9D9] w-50 pointer-events-none"},
+];
+---
+
+<Layout title="404 • Página No Encontrada">
+  <main class="relative max-w-7xl flex flex-col items-center justify-center mx-auto p-8 min-h-screen">
+    <section class="grid grid-cols-3 gap-14 items-center justify-center">
+      {
+        numberBoxes.map((box) => (
+          <button
+            class={`relative flex items-center justify-center ${box.position} ${box.image ? "w-32 h-32" : "w-30 h-30"} transition-transform hover:scale-105`}
+          >
+            {box.image ? (
+              <img class="size-32" alt="Donut icon" src={box.image} />
+            ) : (
+              <div class="relative size-32 bg-[#262626] rounded-sm border border-[#999999] flex items-center justify-center">
+                <span class="font-medium text-[#d9d9d9] text-6xl">
+                  {box.number}
+                </span>
+              </div>
+            )}
+          </button>
+        ))
+      }
+    </section>
+    <div class="flex flex-col justify-center items-center">
+      <img src="./Title.svg" alt="title" , class="size-96" />
+      <p class="text-[#D9D9D9] w-2xs h-auto flex items-center justify-center font-normal text-lg text-center">
+        Lo siento, esta pagina que estas buscando no existe o ha sido removida,
+        sigue explorando nuestro sitio
+      </p>
+    </div>
+    <nav class="p-6 space-x-2.5 flex items-center justify-center">
+      {
+        navegationLinks.map((nav) => (
+          <button class={nav.styles}>
+            <a href={nav.href}>{nav.label}</a>
+          </button>
+        ))
+      }
+    </nav>
+  </main>
+</Layout>

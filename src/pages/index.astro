@@ -1,13 +1,30 @@
 ---
-import Hero from "@/components/Hero.astro"
-import Layout from "../layouts/layout.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro";
+import Layout from "../layouts/layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Separator from "@/components/Separator.astro";
+import Projects from "@/components/Projects.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
-<Layout title="Pagina de inicio">
-	<main class="">
-		<SectionContainer id="incio">
-			<Hero />
-		</SectionContainer>
-	</main>
+<Layout title="Seyi • Developer">
+  <Navbar />
+  <main class="">
+    <SectionContainer id="inicio">
+      <Hero />
+    </SectionContainer>
+    <div class="py-20">
+      <Separator
+        bg="#8A38F5"
+        text="EN PROGRESO..."
+        color="#999999"
+        outline={false}
+      />
+    </div>
+    <SectionContainer id="Proyectos">
+      <Projects />
+    </SectionContainer>
+  </main>
+  <Footer />
 </Layout>

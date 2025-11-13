@@ -1,0 +1,34 @@
+---
+interface Props {
+  bg?: string;
+  text?: string
+  color?: string
+  borderColor?: string
+  outline?: boolean
+  paddingY?: string
+}
+
+const {
+  bg = "#777777",
+  text = "SAY HELLO - WANNA BE STARTS - ...",
+  color = "#777777",
+  borderColor = "#555555",
+  outline = false,
+  paddingY = "py-18"
+} = Astro.props
+---
+
+<section
+  class={`w-full flex items-center justify-center ${paddingY} relative overflow-hidden`}
+  style={`border-top: 1px solid ${borderColor}; border-bottom: 1px solid ${borderColor}; background-color: ${bg}`}
+>
+  <h2 class={`uppercase text-center text-4xl tracking-wide font-bold ${
+    outline ? "text-transparent border-2 border-current" : ""
+    }`}
+    style={`color: ${outline ? "transparent" : color}; -webkit-text-stroke: ${
+    outline ? `1px ${color}` : "0"
+    };`}
+  >
+    {text}
+  </h2>
+</section>
